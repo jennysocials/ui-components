@@ -121,8 +121,8 @@
 <style>
   .practice-areas-menu-wrapper {
     display: none;
-    position: absolute;
-    top: 100px;
+    position: fixed;
+    top: 60px;
     left: 0;
     width: 100%;
     background: #fff;
@@ -152,7 +152,7 @@
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 .practice-areas-menu-columns::-webkit-scrollbar {
-  height: 8px;
+  height: 10px;
 }
 
 .practice-areas-menu-columns::-webkit-scrollbar-track {
