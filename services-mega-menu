@@ -1,0 +1,305 @@
+<!-- PRACTICE AREAS MEGA MENU HTML + CSS START -->
+<a href="/practice-areas-dropdown" id="practice-areas-link">Practice Areas</a>
+
+<!-- PRACTICE AREAS MEGA MENU -->
+<div class="practice-areas-menu-wrapper" id="practiceAreasDropdown">
+  <div class="practice-areas-menu-inner">
+    <div class="practice-areas-menu-columns">
+
+      <!-- ENERGY -->
+      <div class="practice-areas-menu-col">
+        <h3><a href="#">Energy</a></h3>
+        <div class="practice-areas-menu-img"></div>
+        <ul>
+          <li><a href="#">Energy Permitting</a></li>
+          <li><a href="#">Regulatory Compliance</a></li>
+          <li><a href="#">Transmission Projects</a></li>
+          <li><a href="#">Renewable Energy</a></li>
+          <li><a href="#">Oil & Gas</a></li>
+          <li><a href="#">Battery Storage</a></li>
+          <li><a href="#">PPAs</a></li>
+          <li><a href="#">Energy Financing</a></li>
+        </ul>
+      </div>
+
+      <!-- ENVIRONMENTAL -->
+      <div class="practice-areas-menu-col">
+        <h3><a href="#">Environmental</a></h3>
+        <div class="practice-areas-menu-img"></div>
+        <ul>
+          <li><a href="#">Environmental Permits</a></li>
+          <li><a href="#">Site Remediation</a></li>
+          <li><a href="#">SEQRA & NEPA</a></li>
+          <li><a href="#">Brownfields</a></li>
+          <li><a href="#">Wetlands & Water</a></li>
+          <li><a href="#">Air & Water Quality</a></li>
+          <li><a href="#">Environmental Compliance</a></li>
+          <li><a href="#">Land & Lakes</a></li>
+        </ul>
+      </div>
+
+      <!-- LAND & LAKES -->
+      <div class="practice-areas-menu-col">
+        <h3><a href="#">Land & Lakes</a></h3>
+        <div class="practice-areas-menu-img"></div>
+        <ul>
+          <li><a href="#">Lake Permitting</a></li>
+          <li><a href="#">Waterfront Development</a></li>
+          <li><a href="#">Dock Approvals</a></li>
+          <li><a href="#">Shoreline Zoning</a></li>
+          <li><a href="#">Riparian Rights</a></li>
+          <li><a href="#">Marina Projects</a></li>
+        </ul>
+      </div>
+
+      <!-- CORPORATE -->
+      <div class="practice-areas-menu-col">
+        <h3><a href="#">Corporate</a></h3>
+        <div class="practice-areas-menu-img"></div>
+        <ul>
+          <li><a href="#">Business Formation</a></li>
+          <li><a href="#">Mergers & Acquisitions</a></li>
+          <li><a href="#">Contract Drafting</a></li>
+          <li><a href="#">Corporate Governance</a></li>
+          <li><a href="#">Shareholder Agreements</a></li>
+          <li><a href="#">Joint Ventures</a></li>
+        </ul>
+      </div>
+
+      <!-- REAL ESTATE -->
+      <div class="practice-areas-menu-col">
+        <h3><a href="#">Real Estate</a></h3>
+        <div class="practice-areas-menu-img"></div>
+        <ul>
+          <li><a href="#">Commercial Transactions</a></li>
+          <li><a href="#">Leasing & Sales</a></li>
+          <li><a href="#">Zoning & Land Use</a></li>
+          <li><a href="#">Development Approvals</a></li>
+          <li><a href="#">Title & Due Diligence</a></li>
+          <li><a href="#">PILOT Agreements</a></li>
+        </ul>
+      </div>
+
+      <!-- ADMINISTRATIVE -->
+      <div class="practice-areas-menu-col">
+        <h3><a href="#">Administrative</a></h3>
+        <div class="practice-areas-menu-img"></div>
+        <ul>
+          <li><a href="#">Agency Representation</a></li>
+          <li><a href="#">Permitting Appeals</a></li>
+          <li><a href="#">FOIL & Open Meetings</a></li>
+          <li><a href="#">Licensing Defense</a></li>
+          <li><a href="#">Regulatory Hearings</a></li>
+          <li><a href="#">Policy Guidance</a></li>
+        </ul>
+      </div>
+
+      <!-- PROJECT PLANNING -->
+      <div class="practice-areas-menu-col">
+        <h3><a href="#">Project Planning</a></h3>
+        <div class="practice-areas-menu-img"></div>
+        <ul>
+          <li><a href="#">Zoning Approvals</a></li>
+          <li><a href="#">Land Use Strategy</a></li>
+          <li><a href="#">Environmental Review</a></li>
+          <li><a href="#">Community Outreach</a></li>
+          <li><a href="#">Infrastructure Agreements</a></li>
+          <li><a href="#">Development Contracts</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- VIEW ALL LEGAL SERVICES BUTTON -->
+    <div class="practice-areas-menu-button-container">
+      <a href="/practice-areas" class="practice-areas-menu-btn">View all Legal Services</a>
+    </div>
+  </div>
+</div>
+
+<!-- STYLES -->
+<style>
+  .practice-areas-menu-wrapper {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 10001;
+    padding: 40px 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-top: 1px solid #ccc;
+  }
+
+ .practice-areas-menu-columns {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 0 20px;
+  scrollbar-width: thin;
+}
+
+.practice-areas-menu-col {
+  flex: 0 0 260px; /* Fixed width */
+  max-width: 260px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.practice-areas-menu-columns::-webkit-scrollbar {
+  height: 8px;
+}
+
+.practice-areas-menu-columns::-webkit-scrollbar-track {
+  background: #f3f3f3;
+  border-radius: 6px;
+}
+
+.practice-areas-menu-columns::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #00703c, #005932);
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.practice-areas-menu-columns::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #009957, #003b1f);
+}
+
+
+
+  .practice-areas-menu-col:hover {
+    box-shadow: 0 10px 25px rgba(0,89,50,0.2);
+    transform: translateY(-5px) scale(1.02);
+  }
+
+  .practice-areas-menu-col h3 a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    background: linear-gradient(90deg, #005932, #00994d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+    margin-bottom: 1px; /* or adjust to your liking */
+  }
+
+  .practice-areas-menu-col h3 a:hover {
+    opacity: 0.75;
+  }
+
+  .practice-areas-menu-img {
+    width: 100%;
+    height: 160px;
+    background: #ddd;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+
+  .practice-areas-menu-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .practice-areas-menu-col ul li {
+    margin-bottom: 6px;
+    font-size: 1rem;
+  }
+
+  .practice-areas-menu-col ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #005932;
+    transition: all 0.2s ease;
+    display: inline-block;
+    position: relative;
+  }
+
+  .practice-areas-menu-col ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #00703c;
+    transition: width 0.25s ease;
+  }
+
+  .practice-areas-menu-col ul li a:hover {
+    color: #003b1f;
+  }
+
+  .practice-areas-menu-col ul li a:hover::after {
+    width: 100%;
+  }
+
+  .practice-areas-menu-button-container {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .practice-areas-menu-btn {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: bold;
+    border: 2px solid #005932;
+    background-color: #fff;
+    color: #005932;
+    border-radius: 100px;
+    text-decoration: none;
+    box-shadow: 0 6px 0 #005932;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .practice-areas-menu-btn:hover {
+    background-color: #005932;
+    color: #fff;
+    box-shadow: none;
+    transform: translateY(2px);
+  }
+</style>
+
+<!--  PRACTICE AREAS MEGA MENU JAVASCRIPT START -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const link = document.querySelector('a[href="/practice-areas-dropdown"]');
+    const menu = document.getElementById('practiceAreasDropdown');
+
+    if (link && menu) {
+      const hoverArea = document.createElement("div");
+      hoverArea.style.position = "relative";
+      link.parentNode.insertBefore(hoverArea, link);
+      hoverArea.appendChild(link);
+      document.body.appendChild(menu);
+
+      hoverArea.addEventListener("mouseenter", () => {
+        menu.style.display = "block";
+      });
+
+      hoverArea.addEventListener("mouseleave", () => {
+        setTimeout(() => {
+          if (!menu.matches(":hover")) menu.style.display = "none";
+        }, 200);
+      });
+
+      menu.addEventListener("mouseenter", () => {
+        menu.style.display = "block";
+      });
+
+      menu.addEventListener("mouseleave", () => {
+        menu.style.display = "none";
+      });
+    }
+  });
+</script>
+<!-- PRACTICE AREAS MEGA MENU JAVASCRIPT END -->
