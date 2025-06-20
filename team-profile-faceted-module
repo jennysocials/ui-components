@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Attorney Directory – Fixed</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: #f8f8f8;
+    }
+    .filter-bar {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3,1fr) auto;
+      background: #003016;
+      color: white;
+      align-items: center;
+      padding: 0 10px;
+      z-index: 10;
+    }
+    .filter-tab {
+      padding:15px;
+      font-size:16px;
+      cursor:pointer;
+      border-right:1px solid #044725;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      position: relative;
+    }
+    .filter-tab:last-child{border-right:none;}
+    .filter-count{margin-left:6px;font-weight:bold;}
+    .filter-tab:after{content:"⌄";transition:transform .2s;}
+    .filter-tab.active:after{transform:rotate(180deg);}
+    .clear-filters {
+      background:#00532f;
+      border:none;
+      color:white;
+      padding:10px 16px;
+      font-size:14px;
+      border-radius:4px;
+      cursor:pointer;
+      margin-left:10px;
+    }
+    .clear-filters:hover { background:#007042; }
+
+    .dropdown-list {
+      position:absolute;
+      top:100%;
+      margin-top:2px;
+      background:#f3f3f3;
+      color:#003016;
+      max-height:180px;
+      overflow-y:auto;
+      font-size:14px;
+      display:none;
+      box-shadow:0 4px 8px rgba(0,0,0,0.15);
+      z-index:100;
+    }
+    .option {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 12px;
+      border-bottom:1px solid #ddd;
+    }
+    .option:last-child{border-bottom:none;}
+    .option input{transform:scale(0.9);margin:0;}
+    .option:hover{background:#e0e0e0;}
+
+    .cards-container {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:24px;
+      padding:30px;
+    }
+    .card {
+      background:white;
+      border-radius:6px;
+      overflow:hidden;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      transition:transform .25s,box-shadow .25s;
+      display:flex;
+      flex-direction:column;
+    }
+    .card:hover {
+      transform:translateY(-4px);
+      box-shadow:0 8px 20px rgba(0,0,0,0.18);
+    }
+    .portrait-container {
+      width:100%;
+      height:200px;
+      overflow:hidden;
+      background:#ddd;
+    }
+    .portrait-container img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .card-content {
+      flex:1;
+      padding:16px;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+    }
+    .card h3 {
+      margin:8px 0;
+      font-size:24px;
+      color:#003016;
+    }
+    .card .title {
+      font-style:italic;
+      font-size:17px;
+      color:#555;
+      margin-bottom:12px;
+    }
+    .practice-areas {
+      list-style:none;
+      padding:0;
+      margin:0 0 14px;
+      flex:1;
+    }
+    .practice-areas li {
+      display:flex;
+      align-items:center;
+      gap:6px;
+      font-size:14px;
+      justify-content:center;
+    }
+    .practice-areas a {
+      color:#00642f;
+      text-decoration:none;
+      font-style:italic;
+      transition:font-weight .2s;
+    }
+    .practice-areas a:hover { font-weight:bold; }
+    .practice-areas img {
+      width:16px;
+      height:16px;
+    }
+    .buttons {
+      display:flex;
+    }
+    .buttons button {
+      flex:1;
+      padding:12px;
+      font-size:14px;
+      color:white;
+      border:none;
+      cursor:pointer;
+      transition:background .2s;
+    }
+    .buttons button:first-child {
+      background:#00532f;
+      border-radius:0 0 0 6px;
+    }
+    .buttons button:last-child {
+      background:#1b6e54;
+      border-radius:0 0 6px 0;
+    }
+    .buttons button:hover:first-child { background:#00703f; }
+    .buttons button:hover:last-child { background:#259e7c; }
+
+    @media(max-width:1024px){
+      .cards-container {
+        grid-template-columns:repeat(2,1fr);
+        padding:20px;
+      }
+    }
+    @media(max-width:640px){
+      .filter-bar { grid-template-columns:1fr auto; }
+      .cards-container {
+        grid-template-columns:1fr;
+        padding:16px;
+      }
+      .portrait-container { height:160px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="filter-bar">
+    <div class="filter-tab" data-filter="name" id="tab-name">Attorney Name<span class="filter-count" id="count-name"></span></div>
+    <div class="filter-tab" data-filter="area" id="tab-area">Practice Areas<span class="filter-count" id="count-area"></span></div>
+    <div class="filter-tab" data-filter="industry" id="tab-industry">Industry<span class="filter-count" id="count-industry"></span></div>
+    <button class="clear-filters" id="clearFiltersBtn">Clear All Filters</button>
+
+    <div class="dropdown-list" id="dropdown-name"></div>
+    <div class="dropdown-list" id="dropdown-area"></div>
+    <div class="dropdown-list" id="dropdown-industry"></div>
+  </div>
+
+  <div class="cards-container" id="cards"></div>
+
+<!-- JavaScript -->
+  <script>
+    const attorneys = [
+  {
+    name: "Thomas West",
+    title: "Founding Partner",
+    areas: [
+      "Environmental Law",
+      "Corporate Law",
+      "Litigation & ADR"
+    ],
+    industries: [
+      "Energy",
+      "Manufacturing",
+      "Technology",
+      "Healthcare"
+    ],
+    image: "https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/f44bb41c-9e52-4528-829b-05839a22c5c9/thomas-west-ai-generated-photo.png"
+  },
+ {
+    name: "Matthew W. Rimkunas",
+    title: "Associater",
+    areas: [
+      "Environmental Law",
+      "Corporate Law",
+      "Litigation & ADR"
+    ],
+    industries: [
+      "Energy",
+      "Manufacturing",
+      "Technology",
+      "Healthcare"
+    ],
+    image: "https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/f44bb41c-9e52-4528-829b-05839a22c5c9/thomas-west-ai-generated-photo.png"
+  },
+
+  {
+    name: "Chanda Harris Steinberg",
+    title: "Counselor",
+    areas: [
+      "Real Estate",
+      "Zoning & Land Use",
+      "Litigation & ADR"
+    ],
+    industries: [
+      "Construction",
+      "Retail",
+      "Hospitality"
+    ],
+    image: "https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/f44bb41c-9e52-4528-829b-05839a22c5c9/thomas-west-ai-generated-photo.png"
+  },
+  {
+    name: "Christopher W. Rust",
+    title: "Associate Attorney",
+    areas: [
+      "Corporate Law",
+      "Energy Development",
+      "Zoning & Land Use"
+    ],
+    industries: [
+      "Energy",
+      "Finance",
+      "Restaurants",
+      "Technology"
+    ],
+    image: "https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/f44bb41c-9e52-4528-829b-05839a22c5c9/thomas-west-ai-generated-photo.png"
+  },
+  {
+    name: "Cindy Monaco",
+    title: "Of Counsel",
+    areas: [
+      "Environmental Law",
+      "Litigation & ADR",
+      "Real Estate"
+    ],
+    industries: [
+      "Hospitality",
+      "Retail",
+      "Construction"
+    ],
+    image: "https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/f44bb41c-9e52-4528-829b-05839a22c5c9/thomas-west-ai-generated-photo.png"
+  },
+  {
+    name: "Greg Mountain",
+    title: "Managing Partner",
+    areas: [
+      "Corporate Law",
+      "Energy Development",
+      "Environmental Law"
+    ],
+    industries: [
+      "Energy",
+      "Finance",
+      "Healthcare",
+      "Manufacturing"
+    ],
+    image: "https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/f44bb41c-9e52-4528-829b-05839a22c5c9/thomas-west-ai-generated-photo.png"
+  },
+  {
+    name: "Louis D. Bianchi",
+    title: "Associate",
+    areas: [
+      "Zoning & Land Use",
+      "Real Estate",
+      "Litigation & ADR"
+    ],
+    industries: [
+      "Construction",
+      "Restaurants",
+      "Retail"
+    ],
+    image: "https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/f44bb41c-9e52-4528-829b-05839a22c5c9/thomas-west-ai-generated-photo.png"
+  },
+  {
+    name: "Mark J. Wagner Jr.",
+    title: "Counsel",
+    areas: [
+      "Energy Development",
+      "Corporate Law",
+      "Zoning & Land Use"
+    ],
+    industries: [
+      "Energy",
+      "Technology",
+      "Finance",
+      "Hospitality"
+    ],
+    image: "https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/f44bb41c-9e52-4528-829b-05839a22c5c9/thomas-west-ai-generated-photo.png"
+  },
+  {
+    name: "Michael Peters",
+    title: "Partner",
+    areas: [
+      "Real Estate",
+      "Environmental Law",
+      "Litigation & ADR"
+    ],
+    industries: [
+      "Healthcare",
+      "Construction",
+      "Manufacturing"
+    ],
+    image: "https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/f44bb41c-9e52-4528-829b-05839a22c5c9/thomas-west-ai-generated-photo.png"
+  }
+];
+    const filters = { name: new Set(), area: new Set(), industry: new Set() };
+
+    function setupDropdown(type) {
+      const dd = document.getElementById(`dropdown-${type}`);
+      const items = [...new Set(
+        type === 'area' ? attorneys.flatMap(a => a.areas) :
+        type === 'industry' ? attorneys.flatMap(a => a.industries) :
+        attorneys.map(a => a.name)
+      )].sort();
+      dd.innerHTML = items.map(item => `
+        <label class="option">
+          <input type="checkbox" data-type="${type}" value="${item}">
+          ${item}
+        </label>
+      `).join('');
+    }
+
+    function updateCounts() {
+      ['name','area','industry'].forEach(type => {
+        document.getElementById(`count-${type}`).textContent = filters[type].size ? `(${filters[type].size})` : '';
+      });
+    }
+
+    function renderCards() {
+      const results = attorneys.filter(a =>
+        (!filters.name.size || filters.name.has(a.name)) &&
+        (!filters.area.size || a.areas.some(ar => filters.area.has(ar))) &&
+        (!filters.industry.size || a.industries.some(i => filters.industry.has(i)))
+      );
+
+      const html = results.length
+        ? results.map(a => `
+          <div class="card">
+            <div class="portrait-container">
+              <img src="${a.image}" alt="${a.name}">
+            </div>
+            <div class="card-content">
+              <h3>${a.name}</h3>
+              <div class="title">${a.title}</div>
+              <ul class="practice-areas">
+                ${a.areas.map(ar => `
+                  <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="Gavel"><a href="#">${ar}</a></li>`
+                ).join('')}
+              </ul>
+              <div class="buttons">
+                <button>Learn More</button><button>vCard</button>
+              </div>
+            </div>
+          </div>`
+        ).join('')
+        : `<p style="padding:20px;">No matching attorneys.</p>`;
+
+      document.getElementById('cards').innerHTML = html;
+      updateCounts();
+    }
+
+    document.querySelectorAll('.filter-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const type = tab.dataset.filter;
+        const dd = document.getElementById(`dropdown-${type}`);
+        const active = tab.classList.toggle('active');
+        document.querySelectorAll('.filter-tab:not([data-filter="${type}"])').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.dropdown-list').forEach(d => d.style.display = 'none');
+        if (active) {
+          dd.style.display = 'block';
+          dd.style.width = `${tab.offsetWidth}px`;
+          dd.style.left = `${tab.offsetLeft}px`;
+        }
+      });
+    });
+
+    document.body.addEventListener('click', e => {
+      if (!e.target.closest('.filter-bar')) {
+        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.dropdown-list').forEach(d => d.style.display = 'none');
+      }
+    });
+
+    document.body.addEventListener('change', e => {
+      if (e.target.matches('input[type="checkbox"]')) {
+        const { type, value } = e.target.dataset;
+        e.target.checked ? filters[type].add(value) : filters[type].delete(value);
+        renderCards();
+      }
+    });
+
+    document.getElementById('clearFiltersBtn').addEventListener('click', () => {
+      Object.values(filters).forEach(s => s.clear());
+      document.querySelectorAll('.dropdown-list input[type="checkbox"]').forEach(cb => cb.checked = false);
+      renderCards();
+    });
+
+    window.addEventListener('load', () => {
+      ['name','area','industry'].forEach(setupDropdown);
+      renderCards();
+    });
+  </script>
+</body>
+</html>
+
+
