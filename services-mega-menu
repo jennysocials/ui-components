@@ -126,7 +126,7 @@
     left: 0;
     width: 100%;
     background: #fff;
-    z-index: 10001;
+    z-index: 9991;
     padding: 40px 20px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     border-top: 1px solid #ccc;
@@ -136,8 +136,8 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  gap: 20px;
-  padding: 0 20px;
+  gap: 16px;
+  padding: 5px 5px;
   scrollbar-width: thin;
 }
 
@@ -153,6 +153,7 @@
 }
 .practice-areas-menu-columns::-webkit-scrollbar {
   height: 10px;
+  background: #00703c;
 }
 
 .practice-areas-menu-columns::-webkit-scrollbar-track {
@@ -181,15 +182,26 @@
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
+    position: relative;
     text-decoration: none;
     display: inline-block;
     background: linear-gradient(90deg, #005932, #00994d);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: opacity 0.2s ease;
+    transition: none; /* Disable any transitions */
+    animation: none; /* Disable animations */
+    opacity: 1; /* Ensure full visibility */
     white-space: nowrap;
-    margin-bottom: 1px; /* or adjust to your liking */
+    margin-bottom: 12px; /* or adjust to your liking */
   }
+  
+  /* Override Squarespace fading animations */
+.practice-areas-menu-col h3,
+.practice-areas-menu-col h3 a {
+  animation: none !important; /* Disable animations */
+  transition: none !important; /* Disable transitions */
+  opacity: 1 !important; /* Ensure text remains fully visible */
+}
 
   .practice-areas-menu-col h3 a:hover {
     opacity: 0.75;
