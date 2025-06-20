@@ -1,0 +1,307 @@
+<!-- ATTORNEY MEGA MENU TRIGGER -->
+<a href="/attorneys-dropdown">Attorneys</a>
+
+<!-- ATTORNEY MEGA MENU -->
+<div class="attorney-mega-menu-wrapper" id="attorneysDropdown">
+  <div class="attorney-mega-menu-inner">
+    <div class="attorney-mega-menu-scroll">
+      <div class="attorney-mega-menu-track">
+
+        <!-- THOMAS WEST -->
+        <div class="attorney-mega-menu-card">
+          <div class="photo"></div>
+          <div class="name">Thomas West</div>
+          <div class="title">Founding Partner</div>
+          <ul class="attorney-mega-menu-areas">
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Environmental Law</li>
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Corporate Law</li>
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Litigation & ADR</li>
+          </ul>
+          <a href="#">Learn More</a>
+        </div>
+
+        <!-- GREG MOUNTAIN -->
+        <div class="attorney-mega-menu-card">
+          <div class="photo"></div>
+          <div class="name">Greg Mountain</div>
+          <div class="title">Managing Partner</div>
+          <ul class="attorney-mega-menu-areas">
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Corporate Law</li>
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Energy Development</li>
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Environmental Law</li>
+          </ul>
+          <a href="#">Learn More</a>
+        </div>
+
+        <!-- MICHAEL PETERS -->
+        <div class="attorney-mega-menu-card">
+          <div class="photo"></div>
+          <div class="name">Michael Peters</div>
+          <div class="title">Partner</div>
+          <ul class="attorney-mega-menu-areas">
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Real Estate</li>
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Environmental Law</li>
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Litigation & ADR</li>
+          </ul>
+          <a href="#">Learn More</a>
+        </div>
+
+        <!-- CINDY MONACO -->
+        <div class="attorney-mega-menu-card">
+          <div class="photo"></div>
+          <div class="name">Cindy Monaco</div>
+          <div class="title">Of Counsel</div>
+          <ul class="attorney-mega-menu-areas">
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Environmental Law</li>
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Litigation & ADR</li>
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Real Estate</li>
+          </ul>
+          <a href="#">Learn More</a>
+        </div>
+
+        <!-- CHRISTOPHER W. RUST -->
+        <div class="attorney-mega-menu-card">
+          <div class="photo"></div>
+          <div class="name">Christopher W. Rust</div>
+          <div class="title">Associate Attorney</div>
+          <ul class="attorney-mega-menu-areas">
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Corporate Law</li>
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Energy Development</li>
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Zoning & Land Use</li>
+          </ul>
+          <a href="#">Learn More</a>
+        </div>
+
+        <!-- CHANDA HARRIS STEINBERG -->
+        <div class="attorney-mega-menu-card">
+          <div class="photo"></div>
+          <div class="name">Chanda Harris Steinberg</div>
+          <div class="title">Counselor</div>
+          <ul class="attorney-mega-menu-areas">
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Real Estate</li>
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Zoning & Land Use</li>
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Litigation & ADR</li>
+          </ul>
+          <a href="#">Learn More</a>
+        </div>
+
+        <!-- MATTHEW W. RIMKUNAS -->
+        <div class="attorney-mega-menu-card">
+          <div class="photo"></div>
+          <div class="name">Matthew W. Rimkunas</div>
+          <div class="title">Associate</div>
+          <ul class="attorney-mega-menu-areas">
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Energy Development</li>
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Corporate Law</li>
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Zoning & Land Use</li>
+          </ul>
+          <a href="#">Learn More</a>
+        </div>
+
+        <!-- MARK J. WAGNER JR. -->
+        <div class="attorney-mega-menu-card">
+          <div class="photo"></div>
+          <div class="name">Mark J. Wagner Jr.</div>
+          <div class="title">Counsel</div>
+          <ul class="attorney-mega-menu-areas">
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Energy Development</li>
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Corporate Law</li>
+            <li><img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/646349d9-428e-4435-99d2-1af9b1797eea/gavel-svgrepo-com+%281%29.png" alt="gavel">Zoning & Land Use</li>
+          </ul>
+          <a href="#">Learn More</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- View All Button -->
+    <div class="attorney-mega-menu-button-container">
+      <a href="https://westfirmlaw.squarespace.com/attorneys" class="attorney-mega-menu-btn">View all Attorneys</a>
+    </div>
+  </div>
+</div>
+
+<!-- STYLES -->
+<style>
+  .attorney-mega-menu-wrapper {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 9999;
+    padding: 24px 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #ccc;
+  }
+
+  .attorney-mega-menu-inner {
+    width: 100%;
+  }
+
+  .attorney-mega-menu-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .attorney-mega-menu-track {
+    display: flex;
+    gap: 20px;
+    padding: 0 10px 20px;
+    min-width: max-content;
+  }
+
+  .attorney-mega-menu-card {
+    flex: 0 0 auto;
+    width: 220px;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+  }
+
+  .attorney-mega-menu-card:hover {
+    box-shadow: 0 10px 25px rgba(0,89,50,0.2);
+    transform: translateY(-5px) scale(1.02);
+  }
+
+  .attorney-mega-menu-card .photo {
+    width: 80px;
+    height: 80px;
+    background: #ccc;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 3px solid #00593233;
+    transition: border-color 0.3s ease;
+  }
+
+  .attorney-mega-menu-card:hover .photo {
+    border-color: #005932;
+  }
+
+  .attorney-mega-menu-card .name {
+    font-weight: 800;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    background: linear-gradient(90deg, #005932, #00994d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+
+  .attorney-mega-menu-card .title {
+    color: #001A0E;
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .attorney-mega-menu-areas {
+    padding: 0;
+    margin: 10px 0 12px;
+    text-align: left;
+    list-style: none;
+    font-size: 0.75rem;
+  }
+
+  .attorney-mega-menu-areas li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    color: #005932;
+  }
+
+  .attorney-mega-menu-areas li img {
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+    flex-shrink: 0;
+  }
+
+  .attorney-mega-menu-card a {
+    margin-top: auto;
+    background: #005932;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .attorney-mega-menu-card a:hover {
+    background: #001A0E;
+  }
+
+  .attorney-mega-menu-button-container {
+    text-align: center;
+    margin-top: 24px;
+  }
+
+  .attorney-mega-menu-btn {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: bold;
+    border: 2px solid #005932;
+    background-color: #fff;
+    color: #005932;
+    border-radius: 100px;
+    text-decoration: none;
+    box-shadow: 0 6px 0 #005932;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .attorney-mega-menu-btn:hover {
+    background-color: #005932;
+    color: #fff;
+    box-shadow: none;
+    transform: translateY(2px);
+  }
+
+  .attorney-mega-menu-scroll::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .attorney-mega-menu-scroll::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .attorney-mega-menu-card {
+      width: 180px;
+    }
+  }
+</style>
+
+<!-- SCRIPT -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const link = document.querySelector('a[href="/attorneys-dropdown"]');
+    const menu = document.getElementById('attorneysDropdown');
+    if (link && menu) {
+      const hoverArea = document.createElement('div');
+      hoverArea.style.position = 'relative';
+      hoverArea.classList.add('attorney-mega-menu-hover-area');
+      link.parentNode.insertBefore(hoverArea, link);
+      hoverArea.appendChild(link);
+      document.body.appendChild(menu);
+
+      hoverArea.addEventListener('mouseenter', () => menu.style.display = 'block');
+      hoverArea.addEventListener('mouseleave', () => setTimeout(() => {
+        if (!menu.matches(':hover')) menu.style.display = 'none';
+      }, 200));
+      menu.addEventListener('mouseenter', () => menu.style.display = 'block');
+      menu.addEventListener('mouseleave', () => menu.style.display = 'none');
+    }
+  });
+</script>
