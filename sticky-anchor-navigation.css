@@ -1,0 +1,6 @@
+#practice-area-anchor-link-menu,
+#attorney-anchor-navigation {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Must be less than the header's z-index */
+}
